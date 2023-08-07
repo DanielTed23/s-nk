@@ -46,8 +46,10 @@ namespace sænk1
                             Console.Write("Indtast antal km/t: ");
                             if (double.TryParse(Console.ReadLine(), out double kmPerHourInput))
                             {
-                                // Brug klassen B til at konvertere km/t til knob
-                                double knotsOutput = B.KmPerHourToKnots(kmPerHourInput);
+                                // Opret et objekt af klassen B
+                                B converter = new B();
+                                // Brug objektet til at konvertere km/t til knob
+                                double knotsOutput = converter.KmPerHourToKnots(kmPerHourInput);
                                 Console.WriteLine($"{kmPerHourInput} km/t er {knotsOutput:F2} knob.\n");
                             }
                             else
